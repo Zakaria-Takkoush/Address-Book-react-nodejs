@@ -25,6 +25,13 @@ app.use(express.json());
 //   console.log(result);
 // });
 
+const auth = require("./middleware/auth");
+
+// Test auth middleware
+app.post("/welcome", auth, (req, res) => {
+  res.status(200).send("Welcome 🙌 ");
+});
+
 app.use("/api", routes); // use routing
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));
