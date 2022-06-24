@@ -1,6 +1,9 @@
 // connect database
 require("../backend-nodejs/connection");
 
+//.env
+require("dotenv").config();
+
 const express = require("express"); // import express server
 const port = 3000;
 const mongoose = require("mongoose");
