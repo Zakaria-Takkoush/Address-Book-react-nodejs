@@ -13,4 +13,10 @@ app.get("/", function (request, response) {
   response.send("Hello World");
 });
 
+app.get("/users", async (req, res) => {
+  const result = await User.find();
+  return res.json(result);
+  console.log(result);
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}...`));
