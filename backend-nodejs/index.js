@@ -1,3 +1,4 @@
+// connect database
 require("../backend-nodejs/connection");
 
 const express = require("express"); // import express server
@@ -10,9 +11,10 @@ const app = express(); // create app by initializing express server
 
 app.use(express.json());
 
-app.get("/", function (request, response) {
-  response.send("Hello World");
-});
+// Test API
+// app.get("/", function (request, response) {
+//   response.send("Hello World");
+// });
 
 // app.get("/users", async (req, res) => {
 //   const result = await User.find();
@@ -20,6 +22,6 @@ app.get("/", function (request, response) {
 //   console.log(result);
 // });
 
-app.use("/api", routes);
+app.use("/api", routes); // use routing
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));
