@@ -6,6 +6,7 @@ const {
   updateContact,
 } = require("./Controllers/ContactsController");
 const { getUsers, register, login } = require("./Controllers/UserController");
+const auth = require("./Middleware/auth");
 
 const router = Router();
 
@@ -19,5 +20,7 @@ router.post("/contact", addContact); // pass body params
 router.delete("/contact", removeContact); // pass the contact id in the URL (?id=...)
 router.put("/contact", updateContact); // update a certain contact, pass the id of contact in the url (?id=...), pass other params in the body
 router.get("/contacts", getUserContacts); // get all contacts of a certian user, pass the user_id in the url (?user_id=...)
+
+// auth middleware (,auth)
 
 module.exports = router;

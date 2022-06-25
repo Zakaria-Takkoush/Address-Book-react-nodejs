@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.edit-contact {
+  display: none;
+}
+
+.edit-contact-show {
+  display: block;
+}

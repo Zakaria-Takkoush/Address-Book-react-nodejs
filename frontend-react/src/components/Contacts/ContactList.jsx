@@ -8,7 +8,7 @@ const ContactList = () => {
 
   // Get Contacts
   async function getContacts() {
-    const res = await fetch("http://localhost:8080/api/contacts/?user_id=62b5ee1e7e925e598048ff7a");
+    const res = await fetch("http://localhost:8080/api/contacts/?user_id=62b5eef1842f1c00a4f9dc44");
     const data = await res.json();
     return data.Contacts; // returns an array of contacts
   };
@@ -38,8 +38,8 @@ const ContactList = () => {
         <th>Edit Contact</th>
         <th>Delete Contact</th>
       </tr>
-        {contacts.map((contact) => 
-        (<Contact key={contact._id} contact_data={contact}/>)
+        {contacts?.map((contact) => 
+        (<Contact key={contact._id} contact_data={contact} setContacts={setContacts}/>)
         )}
       </tbody>
     </table>
