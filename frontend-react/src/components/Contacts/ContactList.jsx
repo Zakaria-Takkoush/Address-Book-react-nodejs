@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Contact from './Contact'
 
 const ContactList = () => {
 
@@ -9,7 +10,7 @@ const ContactList = () => {
   async function getContacts() {
     const res = await fetch("http://localhost:8080/api/contacts/?user_id=62b5ee1e7e925e598048ff7a");
     const data = await res.json();
-    return data;
+    return data.Contacts; // returns an array of contacts
   };
 
   useEffect(() => {
@@ -23,8 +24,25 @@ const ContactList = () => {
 
 //http://localhost:8080/api/contacts/?user_id=62b5ee1e7e925e598048ff7a
 
+
+// Retuen a table containing contacts... map through contacts and insert a contact element for each.
   return (
-    <div>{contacts.Found}</div>
+    <table className='contact-list'>
+      <tbody>
+      <tr>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Phone Number</th>
+        <th>Relationship Status</th>
+        <th>Location</th>
+        <th>Edit Contact</th>
+        <th>Delete Contact</th>
+      </tr>
+        {contacts.map((contact) => 
+        (<Contact key={contact._id} contact_data={contact}/>)
+        )}
+      </tbody>
+    </table>
   )
 }
 
