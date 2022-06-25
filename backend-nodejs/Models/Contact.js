@@ -23,6 +23,7 @@ const contactSchema = new mongoose.Schema({
     min: 6,
     max: 255,
     unique: true,
+    lowercase: true,
   },
 
   relationship_status: {
@@ -41,6 +42,11 @@ const contactSchema = new mongoose.Schema({
       required: true,
     },
   },
+
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
-module.exports = mongoose.model("User", contactSchema);
+module.exports = mongoose.model("Contact", contactSchema);
