@@ -3,6 +3,7 @@ const {
   addContact,
   removeContact,
   getUserContacts,
+  updateContact,
 } = require("./Controllers/ContactsController");
 const { getUsers, register, login } = require("./Controllers/UserController");
 
@@ -17,5 +18,6 @@ router.post("/auth/login", login);
 router.post("/contact", addContact);
 router.delete("/contact", removeContact);
 router.get("/contacts", getUserContacts);
+router.put("/contact", updateContact);
 
 module.exports = router;

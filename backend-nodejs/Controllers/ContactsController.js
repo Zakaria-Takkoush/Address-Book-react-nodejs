@@ -62,8 +62,48 @@ async function getUserContacts(req, res) {
   }
 }
 
+// Edit a contact (pass its id)
+async function updateContact(req, res) {
+  try {
+    const { name, phone_number, email, relationship_status, location, user } =
+      req.body;
+
+    const contact = await Contact.findByIdAndUpdate(req.query.id, {
+      name,
+      phone_number,
+      email,
+      relationship_status,
+      location,
+      user,
+    });
+
+    const updatedContact = await contact.save();
+
+    console.log("Contact Updated =>", updatedContact);
+    return res.send({ "Contact Updated => ": updatedContact });
+
+    // Another way (trial)
+    //     const contact_to_update = await Contact.findById(req.query.id);
+    //     const { name, phone_number, email, relationship_status, location, user } =
+    //       req.body;
+    //     const updated = await contact_to_update.update({
+    //       name,
+    //       phone_number,
+    //       email,
+    //       relationship_status,
+    //       location,
+    //       user,
+    //     });
+    //     return res.send(updated);
+  } catch (error) {
+    console.log(error.message);
+    res.send(error.message);
+  }
+}
+
 module.exports = {
   addContact,
   removeContact,
   getUserContacts,
+  updateContact,
 };
