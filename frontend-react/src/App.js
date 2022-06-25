@@ -5,8 +5,8 @@ import Login from "./pages/Login";
 function App() {
   return (
     <BrowserRouter>
-      <Login />
       <Routes>
+        <Route path="/" element={<Login />}></Route>
         <Route path="user/contacts" element={<Contacts />}></Route>
       </Routes>
     </BrowserRouter>
