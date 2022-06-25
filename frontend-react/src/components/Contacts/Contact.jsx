@@ -13,7 +13,7 @@ const Contact = ({contact_data, setContacts}) => {
     });
     if (res.status === 200) {
       console.log("success")
-      // setContacts(contacts.filter((contact) => contact.id !== id))
+      // Set contacts after click
       setContacts((contacts) => {
         return contacts.filter((contact) => contact._id !== id)
       })
@@ -23,7 +23,7 @@ const Contact = ({contact_data, setContacts}) => {
     }
   };
 
-  //Edit Contact
+  //Edit Contact (passing contact id)
   async function editContact() {
     setEditForm(!editForm)
     const id = contact_data._id
