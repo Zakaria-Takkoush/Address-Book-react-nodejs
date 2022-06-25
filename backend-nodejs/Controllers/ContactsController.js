@@ -53,8 +53,10 @@ async function removeContact(req, res) {
 
 // Get all contacts of a specific user (pass user id as a query param)
 async function getUserContacts(req, res) {
+  console.log(req.user);
   try {
     const contacts = await Contact.find({ user: req.query.user_id });
+    // const contacts = await Contact.find({ user: req.user._id });
     res.send({ Found: contacts.length, Contacts: contacts });
   } catch (error) {
     console.log(error.message);
