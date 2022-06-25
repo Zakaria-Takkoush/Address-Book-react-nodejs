@@ -1,5 +1,8 @@
 const { Router } = require("express");
-const { addContact } = require("./Controllers/ContactsController");
+const {
+  addContact,
+  removeContact,
+} = require("./Controllers/ContactsController");
 const { getUsers, register, login } = require("./Controllers/UserController");
 
 const router = Router();
@@ -10,6 +13,7 @@ router.post("/auth/register", register);
 router.post("/auth/login", login);
 
 // Contacts
-router.post("/add_contact", addContact);
+router.post("/contact", addContact);
+router.delete("/contact", removeContact);
 
 module.exports = router;
