@@ -5,13 +5,14 @@ require("../backend-nodejs/connection");
 require("dotenv").config();
 
 const express = require("express"); // import express server
-const port = 3000;
+const port = 8080;
 const mongoose = require("mongoose");
 const User = require("./Models/User");
 const routes = require("./routes");
+const cors = require("cors");
 
 const app = express(); // create app by initializing express server
-
+app.use(cors());
 app.use(express.json());
 
 // Test API
