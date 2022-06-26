@@ -87,12 +87,12 @@ const Contact = ({contact_data, setContacts, contacts}) => {
 
   return (
     <>
-      <div>
-      <p>{contact_data.name}</p>
-      <p>{contact_data.email}</p>
-      <p>{contact_data.phone_number}</p>
-      <p>{contact_data.relationship_status}</p>
-      <p>location</p>
+    <div className='contact'>
+      <p>Name: {contact_data.name}</p>
+      <p>E-mail: {contact_data.email}</p>
+      <p>Phone Number: {contact_data.phone_number}</p>
+      <p>Relationship: {contact_data.relationship_status}</p>
+      <p>Location: location</p>
       <p><button onClick={showEditContact}>Edit</button></p>
       <p><button onClick={deleteContact}>Delete</button></p>
     </div>

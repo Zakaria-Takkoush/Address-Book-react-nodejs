@@ -19,3 +19,8 @@ code {
 .edit-contact-show {
   display: block;
 }
+
+.contact {
+  display: flex;
+  gap: 10px;
+}
