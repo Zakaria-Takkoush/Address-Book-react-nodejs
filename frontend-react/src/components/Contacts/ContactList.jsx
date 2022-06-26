@@ -27,9 +27,8 @@ const ContactList = ({setContacts, contacts}) => {
 
 // Retuen a table containing contacts... map through contacts and insert a contact element for each.
   return (
-    <table className='contact-list'>
-      <tbody>
-      <tr>
+    <div className='contact-list'>
+      {/* <tr>
         <th>Name</th>
         <th>E-mail</th>
         <th>Phone Number</th>
@@ -37,12 +36,13 @@ const ContactList = ({setContacts, contacts}) => {
         <th>Location</th>
         <th>Edit Contact</th>
         <th>Delete Contact</th>
-      </tr>
+      </tr> */}
+      {/* If the user has contacts, display "Your Contacts", otherwise display "No Contacts" */}
+      {(contacts.length > 0) ? <h1>Your Contacts</h1> : <h1>No Contacts</h1> }
         {contacts?.map((contact) => 
         (<Contact key={contact._id} contact_data={contact} setContacts={setContacts} contacts={contacts}/>)
         )}
-      </tbody>
-    </table>
+    </div>
   )
 }
 

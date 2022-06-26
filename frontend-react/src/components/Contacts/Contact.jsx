@@ -87,15 +87,15 @@ const Contact = ({contact_data, setContacts, contacts}) => {
 
   return (
     <>
-      <tr>
-      <td>{contact_data.name}</td>
-      <td>{contact_data.email}</td>
-      <td>{contact_data.phone_number}</td>
-      <td>{contact_data.relationship_status}</td>
-      <td>location</td>
-      <td><button onClick={showEditContact}>Edit</button></td>
-      <td><button onClick={deleteContact}>Delete</button></td>
-    </tr>
+      <div>
+      <p>{contact_data.name}</p>
+      <p>{contact_data.email}</p>
+      <p>{contact_data.phone_number}</p>
+      <p>{contact_data.relationship_status}</p>
+      <p>location</p>
+      <p><button onClick={showEditContact}>Edit</button></p>
+      <p><button onClick={deleteContact}>Delete</button></p>
+    </div>
 
     {/* Edit Contact form */}
 
