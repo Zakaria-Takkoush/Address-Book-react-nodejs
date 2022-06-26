@@ -2,30 +2,30 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const Filter = ({setContacts, contacts}) => {
+const FilterbyPhone = ({setContacts, contacts}) => {
 
   const [filter, setFilter] = useState("")
   const [option, setOption] = useState("include")
 
-  function filterByName(e) {
+  function filterByPhone(e) {
     e.preventDefault();
     console.log(contacts);
     let filtered = []
     // includes:
     if (option === "include") {
       filtered = contacts.filter(contact =>
-        contact.name.includes(filter)
+        contact.phone_number.includes(filter)
      )}
      // starts with:
     else if (option === "end") {
       filtered = contacts.filter(contact =>
-        contact.name.endsWith(filter)
+        contact.phone_number.endsWith(filter)
      )
     }
     // ends with:
     else if (option === "start") {
       filtered = contacts.filter(contact =>
-        contact.name.startsWith(filter)
+        contact.phone_number.startsWith(filter)
      )
     }
      console.log(filtered);
@@ -41,8 +41,8 @@ const Filter = ({setContacts, contacts}) => {
   return (
 
     <div>
-      <h3>Filter By Name</h3>
-      <form onSubmit={filterByName}>
+      <h3>Filter By Phone Number</h3>
+      <form onSubmit={filterByPhone}>
         <label>FIlter By Name</label>
         <select onChange={(e) => {
               setOption(e.target.value);
@@ -62,4 +62,4 @@ const Filter = ({setContacts, contacts}) => {
   )
 }
 
-export default Filter
+export default FilterbyPhone
