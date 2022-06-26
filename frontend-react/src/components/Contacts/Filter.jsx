@@ -1,12 +1,24 @@
 import React from 'react'
+import { useState } from 'react';
 
 const Filter = ({setContacts, contacts}) => {
 
+  const [filter, setFilter] = useState("")
+  const [option, setOption] = useState("include")
 
   function filterByName(e) {
     e.preventDefault();
     console.log(contacts);
-    setContacts()
+    // includes:
+    if (option === "include") {
+      const filtered = contacts.filter(contact =>
+        contact.name.includes(filter)
+     )
+     // starts with:
+     
+     console.log(filtered);
+     setContacts(filtered)
+    }
   }
     
   return (
@@ -14,12 +26,17 @@ const Filter = ({setContacts, contacts}) => {
     <div>
       <form onSubmit={filterByName}>
         <label>FIlter By Name</label>
-        <select>
+        <select onChange={(e) => {
+              setOption(e.target.value);
+              console.log(option);
+            }}>
           <option value="include">Includes...</option>
           <option value="start">Starts with...</option>
           <option value="end">Ends with...</option>
         </select>
-        <input type="text" />
+        <input type="text" value={filter} onChange={(e) => {
+            setFilter(e.target.value)
+          }} />
         <input type="submit" />
       </form>
     </div>
