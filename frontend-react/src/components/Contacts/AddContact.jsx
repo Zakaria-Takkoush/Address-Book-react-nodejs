@@ -3,7 +3,9 @@ import { useState } from 'react';
 
 const AddContact = ({setContacts}) => {
 
-  //Add a contact
+//Add a contact
+
+  // States
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
@@ -26,12 +28,13 @@ const AddContact = ({setContacts}) => {
     // setLocation("")
   }
 
+  // Adding a contact function
   async function addContact() {
     const new_contact = {
-      name: "asdf",
-      email: "asdf@asdf.com",
-      phone_number: "123456789",
-      relationship_status: "married",
+      name: name,
+      email: email,
+      phone_number: phone_number,
+      relationship_status: relationship_status,
       user: "62b5eef1842f1c00a4f9dc44",   //to be changed to user from token
       location: {
         type : "Point",
@@ -50,11 +53,38 @@ const AddContact = ({setContacts}) => {
     const data = await res.json();
     console.log(data)
     // setContacts([...contacts, data]);
+    // setContacts((contacts) => {
+    //   return [...contacts, data];
+    // })
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
+
+        <label>Name</label>
+        <input type="text" value={name} onChange={(e) => {
+            setName(e.target.value);
+            }}/>
+
+        <label>e-mail</label>
+        <input type="email" value={email} onChange={(e) => {
+            setEmail(e.target.value);
+            }}/>
+
+        <label>Phone Number</label>
+        <input type="text" value={phone_number} onChange={(e) => {
+            setPhoneNumber(e.target.value);
+            }}/>
+
+        <label>Relationship</label>
+        <input type="text" value={relationship_status }  onChange={(e) => {
+            setRelationshipStatus(e.target.value);
+            }}/>
+
+        {/* <label>Location</label>
+        <input type="" value={relationship_status} /> */}
+
         <input type="submit" />
       </form>
     </div>
