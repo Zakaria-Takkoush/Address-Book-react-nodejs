@@ -9,16 +9,20 @@ const Filter = ({setContacts, contacts}) => {
   function filterByName(e) {
     e.preventDefault();
     console.log(contacts);
+    let filtered = []
     // includes:
     if (option === "include") {
-      const filtered = contacts.filter(contact =>
+      filtered = contacts.filter(contact =>
         contact.name.includes(filter)
-     )
+     )}
      // starts with:
-     
+    else if (option === "start") {
+      filtered = contacts.filter(contact =>
+        contact.name.startsWith(filter)
+     )
+    }
      console.log(filtered);
      setContacts(filtered)
-    }
   }
     
   return (
