@@ -11,12 +11,12 @@ const AddContact = ({setContacts}) => {
   const [user, setUser] = useState("");
 
   async function addContact() {
-    new_contact = {
-      name: name,
-      email: email,
-      phone_number: phone_number,
-      relationship_status: relationship_status,
-      user: "62b5eef1842f1c00a4f9dc44",
+    const new_contact = {
+      name: "asdf",
+      email: "asdf@asdf.com",
+      phone_number: "123456789",
+      relationship_status: "married",
+      user: "62b5eef1842f1c00a4f9dc44",   //to be changed to user from token
       location: {
         type : "Point",
         coordinates : [
@@ -32,13 +32,14 @@ const AddContact = ({setContacts}) => {
       body: JSON.stringify(new_contact),
     });
     const data = await res.json();
-    setContacts([...contacts, data]);
+    console.log(data)
+    // setContacts([...contacts, data]);
   }
 
   return (
     <div>
       <form onSubmit={addContact}>
-
+        <input type="submit" />
       </form>
     </div>
   )
