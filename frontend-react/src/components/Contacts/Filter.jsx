@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const Filter = ({setContacts, contacts}) => {
+const Filter = ({setFilteredContacts, contacts}) => {
 
   const [filter, setFilter] = useState("")
   const [option, setOption] = useState("include")
@@ -14,28 +14,28 @@ const Filter = ({setContacts, contacts}) => {
     // includes:
     if (option === "include") {
       filtered = contacts.filter(contact =>
-        contact.name.includes(filter)
+        contact.name.toLowerCase().includes(filter.toLowerCase())
      )}
      // starts with:
     else if (option === "end") {
       filtered = contacts.filter(contact =>
-        contact.name.endsWith(filter)
+        contact.name.toLowerCase().endsWith(filter.toLowerCase())
      )
     }
     // ends with:
     else if (option === "start") {
       filtered = contacts.filter(contact =>
-        contact.name.startsWith(filter)
+        contact.name.toLowerCase().startsWith(filter.toLowerCase())
      )
     }
      console.log(filtered);
-     setContacts(filtered)
+     setFilteredContacts(filtered)
   }
 
   // CLear filter
   function clearFilter() {
     console.log(contacts)
-    setContacts(contacts)
+    setFilteredContacts(contacts)
   }
 
   return (

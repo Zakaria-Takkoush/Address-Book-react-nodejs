@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Contact from './Contact'
 
-const ContactList = ({setContacts, contacts}) => {
+const ContactList = ({setContacts, contacts, filteredContacts}) => {
 
   // const [contacts, setContacts] = useState([])
 
@@ -42,8 +42,8 @@ function clearFilters() {
         <th>Delete Contact</th>
       </tr> */}
       {/* If the user has contacts, display "Your Contacts", otherwise display "No Contacts" */}
-      {(contacts.length > 0) ? <h1>Your Contacts</h1> : <h1>No Contacts</h1> }
-        {contacts?.map((contact) => 
+      {(filteredContacts.length > 0) ? <h1>Your Contacts</h1> : <h1>No Contacts</h1> }
+        {filteredContacts?.map((contact) => 
         (<Contact key={contact._id} contact_data={contact} setContacts={setContacts} contacts={contacts}/>)
         )}
     </div>
