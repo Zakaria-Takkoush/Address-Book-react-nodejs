@@ -33,11 +33,15 @@ const LoginForm = () => {
         body: JSON.stringify(user_data),
       });
       const response = await res.json();
+      // Validate credentails
+      if (response.error){
+        alert(response.error)
+      }
       console.log(response)
       setEmail("")
       setPassword("")
       // Navigate to contacts list page
-      response.token ? navigate('user/contacts') : alert("Cannot login!")
+      response.token && navigate('user/contacts') //: alert("Cannot login!")
     };
 
   return (

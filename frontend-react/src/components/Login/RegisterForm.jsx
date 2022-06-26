@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 const RegisterForm = () => {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   // Initial state of email and password
 
@@ -40,7 +40,7 @@ const RegisterForm = () => {
       // console.log(response)
       // Validate successful account creation
       if (response.message === "User added successfully") {
-        alert("Account Created!")
+        alert("Account Created! \m You can log in with your account")
       } else {
         alert('Unable to create account!')
       }

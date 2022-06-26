@@ -46,13 +46,14 @@ async function register(req, res) {
 async function login(req, res) {
   try {
     const user = await User.findOne({ email: req.body.email });
-    if (!user) return res.status(400).send("invalid credentials");
+    if (!user) return res.status(400).json({ error: "Invalid Credentials" });
 
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
-    if (!validPassword) return res.status(400).send("invalid credentials");
+    if (!validPassword)
+      return res.status(400).json({ error: "Invalid Credentials" });
 
     const token = jwt.sign(
       { _id: user._id, name: user.name, email: user.email },
