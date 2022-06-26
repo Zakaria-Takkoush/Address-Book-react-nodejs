@@ -40,7 +40,7 @@ const RegisterForm = () => {
       // console.log(response)
       // Validate successful account creation
       if (response.message === "User added successfully") {
-        alert("Account Created! \m You can log in with your account")
+        alert("Account Created!\nYou can log in with your account")
       } else {
         alert('Unable to create account!')
       }

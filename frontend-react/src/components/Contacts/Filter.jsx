@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Filter = () => {
+const Filter = ({setContacts, contacts}) => {
   return (
-    <div>Filter</div>
+    <div>
+      
+    </div>
   )
 }
 
