@@ -85,7 +85,7 @@ const AddContact = ({setContacts, contacts}) => {
         {/* <label>Location</label>
         <input type="" value={relationship_status} /> */}
 
-        <input type="submit" />
+        <input type="submit" value="Add Contact"/>
       </form>
     </div>
   )
