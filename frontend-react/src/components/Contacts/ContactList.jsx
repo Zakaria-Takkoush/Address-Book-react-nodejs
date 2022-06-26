@@ -2,9 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Contact from './Contact'
 
-const ContactList = () => {
+const ContactList = ({setContacts, contacts}) => {
 
-  const [contacts, setContacts] = useState([])
+  // const [contacts, setContacts] = useState([])
 
   // Get Contacts
   async function getContacts() {
@@ -39,7 +39,7 @@ const ContactList = () => {
         <th>Delete Contact</th>
       </tr>
         {contacts?.map((contact) => 
-        (<Contact key={contact._id} contact_data={contact} setContacts={setContacts}/>)
+        (<Contact key={contact._id} contact_data={contact} setContacts={setContacts} contacts={contacts}/>)
         )}
       </tbody>
     </table>

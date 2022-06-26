@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const AddContact = ({setContacts}) => {
+const AddContact = ({setContacts, contacts}) => {
 
 //Add a contact
 
@@ -52,7 +52,7 @@ const AddContact = ({setContacts}) => {
     });
     const data = await res.json();
     console.log(data)
-    // setContacts([...contacts, data]);
+    setContacts([...contacts, data]);
     // setContacts((contacts) => {
     //   return [...contacts, data];
     // })

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const Contact = ({contact_data, setContacts}) => {
+const Contact = ({contact_data, setContacts, contacts}) => {
 
   // Edit form status, false by deafult (not visible)
   const [editForm, setEditForm] = useState(false)
@@ -42,10 +42,6 @@ const Contact = ({contact_data, setContacts}) => {
     // Call the edit function
     editContact()
     // Reset fields to empty 
-    setName("");
-    setEmail("");
-    setPhoneNumber("");
-    setRelationshipStatus("")
     // setLocation("")
   }
 
@@ -82,6 +78,11 @@ const Contact = ({contact_data, setContacts}) => {
   });
   const data = await res.json();
   console.log(data)
+  // Set contacts after edit
+  // setContacts((contacts) => {
+  //   return [...contacts]
+  // })
+  // setContacts(contacts)
  }
 
   return (
