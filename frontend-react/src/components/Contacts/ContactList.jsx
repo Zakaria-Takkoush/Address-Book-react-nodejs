@@ -24,10 +24,14 @@ const ContactList = ({setContacts, contacts}) => {
 
 //http://localhost:8080/api/contacts/?user_id=62b5ee1e7e925e598048ff7a
 
+function clearFilters() {
+  setContacts(contacts)
+}
 
 // Retuen a table containing contacts... map through contacts and insert a contact element for each.
   return (
     <div className='contact-list'>
+            {<button onClick={clearFilters}>Clear Filters</button>}
       {/* <tr>
         <th>Name</th>
         <th>E-mail</th>
