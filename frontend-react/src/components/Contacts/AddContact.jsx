@@ -10,6 +10,22 @@ const AddContact = ({setContacts}) => {
   const [relationship_status, setRelationshipStatus] = useState("");
   const [user, setUser] = useState("");
 
+  async function handleSubmit (e) {
+    e.preventDefault();
+    if (!name || !email || !phone_number || !relationship_status) {
+      alert("Please fill all fields!");
+      return;
+    }
+    // Call the add function
+    addContact()
+    // Reset fields to empty 
+    setName("");
+    setEmail("");
+    setPhoneNumber("");
+    setRelationshipStatus("")
+    // setLocation("")
+  }
+
   async function addContact() {
     const new_contact = {
       name: "asdf",
@@ -38,7 +54,7 @@ const AddContact = ({setContacts}) => {
 
   return (
     <div>
-      <form onSubmit={addContact}>
+      <form onSubmit={handleSubmit}>
         <input type="submit" />
       </form>
     </div>
