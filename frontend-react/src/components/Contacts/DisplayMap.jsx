@@ -5,7 +5,6 @@ import { Icon } from "leaflet";
 
 const DisplayMap = ({location}) => {
 
-const [activePark, setActivePark] = useState(null);
     // console.log(location.coordinates);
     
   return (

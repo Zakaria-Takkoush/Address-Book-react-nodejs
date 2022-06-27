@@ -5,6 +5,7 @@ import Filter from "../components/Contacts/Filter"
 import FilterbyPhone from '../components/Contacts/FilterbyPhone'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import AddMap from '../components/Contacts/AddMap'
 
 
 const Contacts = () => {
