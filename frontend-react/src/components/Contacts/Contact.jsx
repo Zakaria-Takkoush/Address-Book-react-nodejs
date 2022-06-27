@@ -104,13 +104,13 @@ function onChange(e) {
   return (
     <>
     <div className='contact'>
-      <p>Name: {contact_data.name}</p>
+      <h3>{contact_data.name}</h3>
       <p>E-mail: {contact_data.email}</p>
       <p>Phone Number: {contact_data.phone_number}</p>
       <p>Relationship: {contact_data.relationship_status}</p>
       <p>Location: location</p>
-      <p><button onClick={showEditContact}>Edit</button></p>
-      <p><button onClick={deleteContact}>Delete</button></p>
+      <p><button className='btn light' onClick={showEditContact}>Edit</button></p>
+      <p><button className='btn' onClick={deleteContact}>Delete</button></p>
     </div>
 
     {/* Edit Contact form */}

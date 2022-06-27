@@ -32,7 +32,7 @@ function clearFilters() {
 // Retuen a table containing contacts... map through contacts and insert a contact element for each.
   return (
     <div className='contact-list'>
-            {<button onClick={clearFilters}>Clear Filters</button>}
+            {<button className='btn' onClick={clearFilters}>Clear Filters</button>}
       {/* <tr>
         <th>Name</th>
         <th>E-mail</th>
