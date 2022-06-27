@@ -6,7 +6,7 @@ import { Icon } from "leaflet";
 const DisplayMap = ({location}) => {
 
 const [activePark, setActivePark] = useState(null);
-    console.log(location.coordinates);
+    // console.log(location.coordinates);
     
   return (
     <MapContainer center={[location.coordinates[0], location.coordinates[1]]} zoom={12}scrollWheelZoom={false}>

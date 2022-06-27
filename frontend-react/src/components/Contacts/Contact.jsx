@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import DisplayMap from './DisplayMap';
+
 
 const Contact = ({contact_data, setContacts, contacts}) => {
 
@@ -108,10 +110,12 @@ function onChange(e) {
       <p>E-mail: {contact_data.email}</p>
       <p>Phone Number: {contact_data.phone_number}</p>
       <p>Relationship: {contact_data.relationship_status}</p>
-      <p>Location: location</p>
+      <DisplayMap location={contact_data.location}/>
       <p><button className='btn light' onClick={showEditContact}>Edit</button></p>
       <p><button className='btn' onClick={deleteContact}>Delete</button></p>
     </div>
+
+ {/* contact_data.location */}
 
     {/* Edit Contact form */}
 

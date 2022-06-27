@@ -5,7 +5,6 @@ import Filter from "../components/Contacts/Filter"
 import FilterbyPhone from '../components/Contacts/FilterbyPhone'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import DisplayMap from '../components/Contacts/DisplayMap'
 
 
 const Contacts = () => {
@@ -24,7 +23,6 @@ const Contacts = () => {
   // The page components
   return (
     <div>
-      {/* <DisplayMap/> */}
       <AddContact setContacts={setContacts} contacts={contacts}/>
       <div className='filter-section'>
         <Filter setContacts={setContacts} contacts={contacts} setFilteredContacts={setFilteredContacts}/>
