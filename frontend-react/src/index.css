@@ -109,6 +109,23 @@ body {
   display: block;
 }
 
+.edit-contact-form {
+  display: flex;
+  color: white;
+  gap: 18px;
+  background-color: brown;
+  padding: 8px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.edit-contact-form > input {
+  width: 130px;
+  padding: 3px;
+}
+
 /* utilities */
 
 .btn {

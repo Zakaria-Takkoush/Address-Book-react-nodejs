@@ -116,7 +116,7 @@ function onChange(e) {
     {/* Edit Contact form */}
 
     <div className={`edit-contact ${editForm && "edit-contact-show" }`}>
-      <form onSubmit={handleSubmit}>
+      <form className='edit-contact-form' onSubmit={handleSubmit}>
 
         <label>Name</label>
         <input name="name" type="text" defaultValue={contact_data.name} onChange={onChange}/>
@@ -133,7 +133,7 @@ function onChange(e) {
         {/* <label>Location</label>
         <input type="" value={relationship_status} /> */}
 
-        <input type="submit" value={"Submit Changes"} />
+        <input type="submit" className='btn light' value={"Submit Changes"} />
       </form>
     </div>
     </>
