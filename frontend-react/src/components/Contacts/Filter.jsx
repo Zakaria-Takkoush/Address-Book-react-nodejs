@@ -43,7 +43,6 @@ const Filter = ({setFilteredContacts, contacts}) => {
     <div className='filter'>
       <h3>Filter By Name</h3>
       <form className='filter-form' onSubmit={filterByName}>
-        <label>FIlter By Name</label>
         <select onChange={(e) => {
               setOption(e.target.value);
               console.log(option);
@@ -55,7 +54,7 @@ const Filter = ({setFilteredContacts, contacts}) => {
         <input type="text" value={filter} onChange={(e) => {
             setFilter(e.target.value)
           }} />
-        <input type="submit" />
+        <input type="submit" className='btn' />
         {/* <button onClick={clearFilter}>CLear Filter</button> */}
       </form>
     </div>
