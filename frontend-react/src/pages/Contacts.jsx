@@ -8,13 +8,18 @@ import { useEffect } from 'react'
 
 const Contacts = () => {
 
+  // creat the initial state of contacts and filtered contatcs,
+  // filtered contacts was create to implement the filter feature,
+  // then set the filtered contacts to contacts when clearing filter.
   const [contacts, setContacts] = useState([])
   const [filteredContacts, setFilteredContacts] = useState(contacts)
 
+  // whenever contacts change, set filtered contacts as contacts
   useEffect(() => {
     setFilteredContacts(contacts)
   }, [contacts])
 
+  // The page components
   return (
     <div>
       <AddContact setContacts={setContacts} contacts={contacts}/>
