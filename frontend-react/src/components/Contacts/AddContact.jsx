@@ -59,8 +59,8 @@ const AddContact = ({setContacts, contacts}) => {
   }
 
   return (
-    <div>
-      <h3>Add a new contact</h3>
+    <div className='add-contact'>
+      <h2>Add a new contact</h2>
       <form onSubmit={handleSubmit}>
 
         <label>Name</label>
@@ -86,7 +86,7 @@ const AddContact = ({setContacts, contacts}) => {
         {/* <label>Location</label>
         <input type="" value={relationship_status} /> */}
 
-        <input type="submit" value="Add Contact"/>
+        <input type="submit" value="Add Contact" className='btn'/>
       </form>
     </div>
   )
