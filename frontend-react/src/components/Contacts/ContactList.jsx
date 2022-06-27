@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Contact from './Contact'
 
+// pass contact and filtered contacts props
 const ContactList = ({setContacts, contacts, filteredContacts, setFilteredContacts}) => {
 
   // const [contacts, setContacts] = useState([])

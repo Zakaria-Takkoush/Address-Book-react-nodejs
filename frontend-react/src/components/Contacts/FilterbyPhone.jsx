@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const FilterbyPhone = ({setContacts, contacts, setFilteredContacts}) => {
 
+  // setup initial filter states: filter for filed and option for filtering options
   const [filter, setFilter] = useState("")
   const [option, setOption] = useState("include")
 

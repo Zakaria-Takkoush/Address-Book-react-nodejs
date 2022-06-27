@@ -12,6 +12,7 @@ const AddContact = ({setContacts, contacts}) => {
   const [relationship_status, setRelationshipStatus] = useState("");
   const [user, setUser] = useState("");
 
+  // on clicking submit...
   async function handleSubmit (e) {
     e.preventDefault();
     if (!name || !email || !phone_number || !relationship_status) {

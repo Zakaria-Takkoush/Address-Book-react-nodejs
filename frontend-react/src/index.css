@@ -44,8 +44,9 @@ body {
   border: solid 1px brown;
 }
 
-/* Contacts Page */
+/* --- Contacts Page --- */
 
+/* Contact List */
 .contact-list {
   display: flex;
   flex-direction: column;
@@ -69,6 +70,11 @@ body {
 
 /* Filter */
 
+.filter-section {
+  display: flex;
+  margin: 20px;
+}
+
 .filter {
   display: flex;
   flex-direction: column;
@@ -88,8 +94,9 @@ body {
 /* Add Contact form */
 .add-contact {
   display: flex;
+  margin-top: 25px;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -154,9 +161,4 @@ select, option {
   border: 1px solid brown;;
   border-radius: 3px;
   padding: 5px;
-}
-
-.filter-section {
-  display: flex;
-  margin: 20px;
 }
