@@ -40,9 +40,9 @@ const Filter = ({setFilteredContacts, contacts}) => {
 
   return (
 
-    <div>
+    <div className='filter'>
       <h3>Filter By Name</h3>
-      <form onSubmit={filterByName}>
+      <form className='filter-form' onSubmit={filterByName}>
         <label>FIlter By Name</label>
         <select onChange={(e) => {
               setOption(e.target.value);

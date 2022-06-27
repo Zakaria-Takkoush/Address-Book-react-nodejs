@@ -60,6 +60,7 @@ const AddContact = ({setContacts, contacts}) => {
 
   return (
     <div>
+      <h3>Add a new contact</h3>
       <form onSubmit={handleSubmit}>
 
         <label>Name</label>
