@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const FilterbyPhone = ({setContacts, contacts}) => {
+const FilterbyPhone = ({setContacts, contacts, setFilteredContacts}) => {
 
   const [filter, setFilter] = useState("")
   const [option, setOption] = useState("include")
@@ -29,14 +29,14 @@ const FilterbyPhone = ({setContacts, contacts}) => {
      )
     }
      console.log(filtered);
-     setContacts(filtered)
+     setFilteredContacts(filtered)
   }
 
   // CLear filter
-  function clearFilter() {
-    console.log(contacts)
-    setContacts(contacts)
-  }
+  // function clearFilter() {
+  //   console.log(contacts)
+  //   setContacts(contacts)
+  // }
 
   return (
 
@@ -56,7 +56,7 @@ const FilterbyPhone = ({setContacts, contacts}) => {
             setFilter(e.target.value)
           }} />
         <input type="submit" />
-        <button onClick={clearFilter}>CLear Filter</button>
+        {/* <button onClick={clearFilter}>CLear Filter</button> */}
       </form>
     </div>
   )

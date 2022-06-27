@@ -19,8 +19,8 @@ const Contacts = () => {
     <div>
       <AddContact setContacts={setContacts} contacts={contacts}/>
       <Filter setContacts={setContacts} contacts={contacts} setFilteredContacts={setFilteredContacts}/>
-      <FilterbyPhone setContacts={setContacts} contacts={contacts}/>
-      <ContactList setContacts={setContacts} contacts={contacts} filteredContacts={filteredContacts} />
+      <FilterbyPhone setContacts={setContacts} contacts={contacts} setFilteredContacts={setFilteredContacts}/>
+      <ContactList setContacts={setContacts} contacts={contacts} setFilteredContacts={setFilteredContacts} filteredContacts={filteredContacts} />
     </div>
   )
 }

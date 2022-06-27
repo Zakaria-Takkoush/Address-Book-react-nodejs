@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Contact from './Contact'
 
-const ContactList = ({setContacts, contacts, filteredContacts}) => {
+const ContactList = ({setContacts, contacts, filteredContacts, setFilteredContacts}) => {
 
   // const [contacts, setContacts] = useState([])
 
@@ -26,6 +26,7 @@ const ContactList = ({setContacts, contacts, filteredContacts}) => {
 
 function clearFilters() {
   setContacts(contacts)
+  setFilteredContacts(contacts)
 }
 
 // Retuen a table containing contacts... map through contacts and insert a contact element for each.

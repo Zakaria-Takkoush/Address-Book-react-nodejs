@@ -33,10 +33,10 @@ const Filter = ({setFilteredContacts, contacts}) => {
   }
 
   // CLear filter
-  function clearFilter() {
-    console.log(contacts)
-    setFilteredContacts(contacts)
-  }
+  // function clearFilter() {
+  //   console.log(contacts)
+  //   setFilteredContacts(contacts)
+  // }
 
   return (
 
@@ -56,7 +56,7 @@ const Filter = ({setFilteredContacts, contacts}) => {
             setFilter(e.target.value)
           }} />
         <input type="submit" />
-        <button onClick={clearFilter}>CLear Filter</button>
+        {/* <button onClick={clearFilter}>CLear Filter</button> */}
       </form>
     </div>
   )
